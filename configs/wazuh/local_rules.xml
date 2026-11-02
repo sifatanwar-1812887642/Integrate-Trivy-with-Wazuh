@@ -1,0 +1,25 @@
+<group name="trivy,">
+  <rule id="100550" level="3">
+    <decoded_as>json</decoded_as>
+    <field name="source">^trivy$</field>
+    <description>Trivy vulnerability detected: $(vulnerability_id)</description>
+  </rule>
+
+  <rule id="100551" level="12">
+    <if_sid>100550</if_sid>
+    <field name="severity">^CRITICAL$</field>
+    <description>CRITICAL vulnerability detected by Trivy: $(vulnerability_id)</description>
+  </rule>
+
+  <rule id="100552" level="10">
+    <if_sid>100550</if_sid>
+    <field name="severity">^HIGH$</field>
+    <description>HIGH vulnerability detected by Trivy: $(vulnerability_id)</description>
+  </rule>
+
+  <rule id="100553" level="7">
+    <if_sid>100550</if_sid>
+    <field name="severity">^MEDIUM$</field>
+    <description>MEDIUM vulnerability detected by Trivy: $(vulnerability_id)</description>
+  </rule>
+</group>
