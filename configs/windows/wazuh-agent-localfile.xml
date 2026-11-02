@@ -1,0 +1,12 @@
+<!-- Add these entries inside the existing <ossec_config> element. -->
+<localfile>
+  <location>C:\ProgramData\Trivy\vulnerabilities.jsonl</location>
+  <log_format>json</log_format>
+  <only-future-events>no</only-future-events>
+</localfile>
+
+<localfile>
+  <location>C:\ProgramData\Trivy\vulnerabilities-replay.jsonl</location>
+  <log_format>json</log_format>
+  <only-future-events>no</only-future-events>
+</localfile>
